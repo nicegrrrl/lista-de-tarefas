@@ -1,5 +1,14 @@
 import { tasksList } from "./database.js";
 
+const checkIfTheresAnyTask = (array) => {
+  const message = document.querySelector(".noTasks");
+  if (array.length === 0) {
+    message.removeAttribute("hidden");
+  } else {
+    message.setAttribute("hidden", "");
+  }
+};
+
 const createTask = () => {
   const inputTask = document.querySelector(".input__task");
   const submitButton = document.querySelector(".submit__button");
@@ -32,7 +41,7 @@ const renderTaskCard = (array) => {
     const task = createTaskCard(item);
     taskList.append(task);
   });
-
+  checkIfTheresAnyTask(array);
   removeTask(array);
   return taskList;
 };
@@ -68,3 +77,4 @@ const removeTask = (array) => {
 };
 
 createTask();
+checkIfTheresAnyTask(tasksList);

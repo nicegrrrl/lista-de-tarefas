@@ -1,0 +1,45 @@
+.container {
+  padding: 5rem 394px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5.75rem;
+}
+
+.title {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-6);
+}
+
+.taskForm {
+  position: relative;
+}
+
+.input__task {
+  width: 30.6875rem;
+  height: 3.25rem;
+  padding: 0.875rem 1.3125rem;
+  border-radius: var(--border-radius-1);
+  border: none;
+  outline: none;
+  font-size: var(--font-size-4);
+  font-weight: var (--font-weight-3);
+  line-height: var(--line-height-1);
+  background-color: var(--grey-scale-6);
+  color: var(--grey-scale-3);
+}
+
+.submit__button {
+  height: 31px;
+  padding: 0.3125rem 0.9375rem;
+  position: absolute;
+  top: 11px;
+  right: 10px;
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-3);
+  border-radius: var(--border-radius-1);
+  line-height: var(--line-height-1);
+  background-color: var(--color-brand-1);
+  color: var(--grey-scale-6);
+}

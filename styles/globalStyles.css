@@ -1,10 +1,42 @@
-:root {
-  --color-brand: #364fc7;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap");
 
-  ---grey-scale-1: #;
-  ---grey-scale-1: #;
-  ---grey-scale-1: #;
-  ---grey-scale-1: #;
-  ---grey-scale-1: #;
-  ---grey-scale-1: #;
+:root {
+  --color-brand-1: #d129a7;
+
+  --grey-scale-1: #1e1e1e;
+  --grey-scale-2: #495057;
+  --grey-scale-3: #868e96;
+  --grey-scale-4: #dee2e6;
+  --grey-scale-5: #f1f3f5;
+  --grey-scale-6: #f8f9fa;
+
+  --font-size-1: 2rem; /* 32px */
+  --font-size-2: 1.5rem; /* 24px */
+  --font-size-3: 1.25rem; /* 20px */
+  --font-size-4: 1rem; /* 16px */
+  --font-size-5: 0.875rem; /* 14px */
+
+  --font-weight-1: 200; /* extra light */
+  --font-weight-2: 400; /* regular */
+  --font-weight-3: 500; /* medium */
+  --font-weight-4: 600; /* semibold */
+  --font-weight-5: 700; /* bold */
+  --font-weight-6: 800; /* extrabold */
+  --font-weight-7: 900; /* black */
+
+  --border-radius-1: 0.5rem; /* 8px */
+
+  --line-height-1: 150%;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: var(--grey-scale-1);
+}
+
+button {
+  cursor: pointer;
 }

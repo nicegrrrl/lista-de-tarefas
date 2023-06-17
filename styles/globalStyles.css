@@ -2,6 +2,7 @@
 
 :root {
   --color-brand-1: #d129a7;
+  --color-brand-2: #a72486;
 
   --grey-scale-1: #1e1e1e;
   --grey-scale-2: #495057;
@@ -37,6 +38,14 @@ button {
   color: var(--grey-scale-1);
 }
 
+body {
+  padding: 5rem 24.625rem;
+}
+
 button {
   cursor: pointer;
+}
+
+.hide {
+  display: none !important;
 }

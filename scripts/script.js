@@ -2,10 +2,14 @@ import { tasksList } from "./database.js";
 
 const checkIfTheresAnyTask = (array) => {
   const message = document.querySelector(".noTasks");
+  const messageContent = document.querySelector(".noTasks > p");
   if (array.length === 0) {
-    message.removeAttribute("hidden");
+    messageContent.innerText = "☹️ Sem tarefas registradas...";
+
+    message.classList.remove("hide");
   } else {
-    message.setAttribute("hidden", "");
+    // message.classList.add("hide");
+    messageContent.innerText = "😄 Suas tarefas";
   }
 };
 
@@ -23,7 +27,7 @@ const createTask = () => {
     if (inputTask.value !== "") {
       tasksList.push(task);
     } else {
-      alert("Escreva uma tarefa para então adicioná-la à lista.");
+      alert("Escreva uma tarefa para então adicioná-la à lista. 😊");
     }
 
     inputTask.value = "";
@@ -41,6 +45,7 @@ const renderTaskCard = (array) => {
     const task = createTaskCard(item);
     taskList.append(task);
   });
+
   checkIfTheresAnyTask(array);
   removeTask(array);
   return taskList;
@@ -51,6 +56,7 @@ const createTaskCard = (task) => {
   const taskText = document.createElement("span");
   const deleteButton = document.createElement("button");
 
+  taskListItem.classList.add("task__list-item");
   taskText.classList.add("task__name");
   deleteButton.classList.add("delete__button");
 

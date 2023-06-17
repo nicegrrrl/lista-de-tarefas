@@ -1,5 +1,4 @@
 .container {
-  padding: 5rem 394px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,11 +11,13 @@
   font-weight: var(--font-weight-6);
 }
 
-.taskForm {
+.taskForm,
+.task__list-item {
   position: relative;
 }
 
-.input__task {
+.input__task,
+.task__list-item {
   width: 30.6875rem;
   height: 3.25rem;
   padding: 0.875rem 1.3125rem;
@@ -30,7 +31,12 @@
   color: var(--grey-scale-3);
 }
 
-.submit__button {
+.task__list-item {
+  background-color: var(--grey-scale-5);
+}
+
+.submit__button,
+.delete__button {
   height: 31px;
   padding: 0.3125rem 0.9375rem;
   position: absolute;
@@ -38,8 +44,38 @@
   right: 10px;
   font-size: var(--font-size-5);
   font-weight: var(--font-weight-3);
-  border-radius: var(--border-radius-1);
   line-height: var(--line-height-1);
+  border-radius: var(--border-radius-1);
   background-color: var(--color-brand-1);
   color: var(--grey-scale-6);
+  transition: all 150ms ease-in-out;
+}
+
+.submit__button:hover {
+  background-color: var(--color-brand-2);
+}
+
+.task__list {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.delete__button {
+  background-color: var(--grey-scale-4);
+  color: var(--grey-scale-2);
+}
+
+.delete__button:hover {
+  background-color: var(--grey-scale-5);
+}
+
+.noTasks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-3);
+  font-weight: var(--font-weight-3);
+  line-height: var(--line-height-1);
 }

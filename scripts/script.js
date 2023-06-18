@@ -8,7 +8,6 @@ const checkIfTheresAnyTask = (array) => {
 
     message.classList.remove("hide");
   } else {
-    // message.classList.add("hide");
     messageContent.innerText = "😄 Suas tarefas";
   }
 };
@@ -26,6 +25,8 @@ const createTask = () => {
 
     if (inputTask.value !== "") {
       tasksList.push(task);
+      const newArray = [...tasksList];
+      localStorage.setItem("toDoList", JSON.stringify(newArray));
     } else {
       alert("Escreva uma tarefa para então adicioná-la à lista. 😊");
     }
@@ -77,10 +78,21 @@ const removeTask = (array) => {
       const index = array.findIndex((item) => item.name === respectiveTaskName);
       console.log(index);
       array.splice(index, 1);
+      const newArray = [...array];
+      localStorage.setItem("toDoList", JSON.stringify(newArray));
       renderTaskCard(array);
     });
   });
 };
 
+const analyseLocalStorageData = () => {
+  const localStorageData = JSON.parse(localStorage.getItem("toDoList"));
+
+  if (localStorageData) {
+    renderTaskCard(localStorageData);
+  }
+};
+
 createTask();
 checkIfTheresAnyTask(tasksList);
+analyseLocalStorageData();

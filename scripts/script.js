@@ -1,5 +1,35 @@
 import { tasksList } from "./database.js";
 
+const changeTheme = () => {
+  const html = document.querySelector("html");
+  const darkModeButton = document.querySelector(".dark-mode__button");
+  const themePreferences = JSON.parse(localStorage.getItem("darkMode"));
+
+  if (themePreferences) {
+    darkModeButton.innerHTML =
+      '<i class="fa-solid fa-sun" style="color: var(--grey-scale-3);"></i>';
+    html.classList.add("dark-mode");
+  } else {
+    darkModeButton.innerHTML =
+      '<i class="fa-solid fa-moon" style="color: var(--grey-scale-3)"></i>';
+    html.classList.remove("dark-mode");
+  }
+
+  darkModeButton.addEventListener("click", () => {
+    html.classList.toggle("dark-mode");
+
+    if (html.classList.contains("dark-mode")) {
+      darkModeButton.innerHTML =
+        '<i class="fa-solid fa-sun" style="color: var(--grey-scale-3);"></i>';
+      localStorage.setItem("darkMode", true);
+    } else {
+      darkModeButton.innerHTML =
+        '<i class="fa-solid fa-moon" style="color: var(--grey-scale-3)"></i>';
+      localStorage.setItem("darkMode", false);
+    }
+  });
+};
+
 const checkIfTheresAnyTask = (array) => {
   const message = document.querySelector(".noTasks");
   const messageContent = document.querySelector(".noTasks > p");
@@ -76,7 +106,6 @@ const removeTask = (array) => {
     button.addEventListener("click", (event) => {
       const respectiveTaskName = event.target.previousSibling.innerText;
       const index = array.findIndex((item) => item.name === respectiveTaskName);
-      console.log(index);
       array.splice(index, 1);
       const newArray = [...array];
       localStorage.setItem("toDoList", JSON.stringify(newArray));
@@ -93,6 +122,7 @@ const analyseLocalStorageData = () => {
   }
 };
 
+changeTheme();
 createTask();
 checkIfTheresAnyTask(tasksList);
 analyseLocalStorageData();

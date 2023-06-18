@@ -1,3 +1,27 @@
+.header {
+  display: relative;
+}
+
+.dark-mode__button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dark-mode__button {
+  width: 1.5rem;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-scale-5);
+  border-radius: var(--border-radius-1);
+  background-color: transparent;
+}
+
+.dark-mode__button:hover {
+  background-color: var(--grey-scale-5);
+}
+
 .container {
   display: flex;
   flex-direction: column;
